@@ -133,6 +133,11 @@ function update(){
     }
 
     turnChange();
+    if(Turn > 300){
+        gameset();
+        document.getElementById("end").textContent = "強制終了：対戦ログをダウンロードした後、F5で更新してください";
+        return;
+    }
     document.getElementById("turn").textContent = ctrans(pTurn);
     if(pTurn != R)  setTimeout(think(), 5000);
 }
