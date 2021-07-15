@@ -1,0 +1,40 @@
+body{
+    background-color:aqua;
+}
+
+h1{
+    color: hotpink;
+    width: 400px;
+    padding: 10px;
+    text-align: center;
+    margin: 30px auto;
+}
+
+footer{
+    width: 98.7%;
+    text-align: center;
+    padding: 10px 0;
+    background-color:white;
+    position:absolute;/*←絶対位置*/
+    bottom: 0; /*下に固定*/
+}
+
+.explain{
+    text-align: center;
+    background-color: white;
+}
+
+.red{
+    color: red;
+}
+
+.ita{
+    font-style: italic;
+}
+
+.enter{
+    text-align: center;
+    padding: 10px;
+    background-color:khaki;
+    margin: 30px auto;
+}
