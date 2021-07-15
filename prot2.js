@@ -291,7 +291,7 @@ function strtime(){
 
 function downloadText() {
     strtime();
-    var title = filetime + '_棋譜' +'.txt';
+    var title = filetime + '_log' +'.txt';
     var blobType = 'text/plain';
     var linkTagId = 'getLocal';
     var linkTag = document.getElementById(linkTagId);
