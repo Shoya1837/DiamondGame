@@ -3,11 +3,17 @@ body{
 }
 
 h1{
+    border-bottom: solid 3px black;
     color: hotpink;
     width: 400px;
     padding: 10px;
     text-align: center;
     margin: 30px auto;
+}
+
+h3{
+    text-align: center;
+    border-top: solid 3px black;
 }
 
 footer{
@@ -37,4 +43,9 @@ footer{
     padding: 10px;
     background-color:khaki;
     margin: 30px auto;
+}
+
+.history{
+    background-color: white;
+    border: solod 3px black;
 }
