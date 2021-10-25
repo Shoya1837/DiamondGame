@@ -19,40 +19,28 @@ function init(){    //初期化関数
 
 function update(){
     showBoard();
-    if(     place96.style.backgroundColor == "red"
-        &&  place98.style.backgroundColor == "red"
-        &&  place9a.style.backgroundColor == "red"
-        &&  place9c.style.backgroundColor == "red"
-        &&  placea7.style.backgroundColor == "red"
-        &&  placea9.style.backgroundColor == "red"
-        &&  placeab.style.backgroundColor == "red"
-        &&  placeb8.style.backgroundColor == "red"
-        &&  placeba.style.backgroundColor == "red"
-        &&  placec9.style.backgroundColor == "red"){
+    if(     place64.style.backgroundColor == "red"
+        &&  place66.style.backgroundColor == "red"
+        &&  place68.style.backgroundColor == "red"
+        &&  place75.style.backgroundColor == "red"
+        &&  place77.style.backgroundColor == "red"
+        &&  place86.style.backgroundColor == "red"){
             winR = true;
     }
-    if(     place30.style.backgroundColor == "yellow"
-        &&  place32.style.backgroundColor == "yellow"
-        &&  place34.style.backgroundColor == "yellow"
-        &&  place36.style.backgroundColor == "yellow"
-        &&  place41.style.backgroundColor == "yellow"
-        &&  place43.style.backgroundColor == "yellow"
-        &&  place45.style.backgroundColor == "yellow"
-        &&  place52.style.backgroundColor == "yellow"
-        &&  place54.style.backgroundColor == "yellow"
-        &&  place63.style.backgroundColor == "yellow"){
+    if(     place20.style.backgroundColor == "yellow"
+        &&  place22.style.backgroundColor == "yellow"
+        &&  place24.style.backgroundColor == "yellow"
+        &&  place31.style.backgroundColor == "yellow"
+        &&  place33.style.backgroundColor == "yellow"
+        &&  place42.style.backgroundColor == "yellow"){
             winY = true;
     }
-    if(     place3c.style.backgroundColor == "green"
-        &&  place3e.style.backgroundColor == "green"
-        &&  place3g.style.backgroundColor == "green"
-        &&  place3i.style.backgroundColor == "green"
-        &&  place4d.style.backgroundColor == "green"
-        &&  place4f.style.backgroundColor == "green"
-        &&  place4h.style.backgroundColor == "green"
-        &&  place5e.style.backgroundColor == "green"
-        &&  place5g.style.backgroundColor == "green"
-        &&  place6f.style.backgroundColor == "green"){
+    if(     place28.style.backgroundColor == "green"
+        &&  place2a.style.backgroundColor == "green"
+        &&  place2c.style.backgroundColor == "green"
+        &&  place39.style.backgroundColor == "green"
+        &&  place3b.style.backgroundColor == "green"
+        &&  place4a.style.backgroundColor == "green"){
             winG = true;
     }
     if(winR && winG && winY){//終了判定
@@ -79,7 +67,6 @@ function clicked(e){
     console.log(i+":"+j);
     if(color == ctrans(O)){ //クリックした場所がオレンジ
         movePiece(prex,prey,i,j,pTurn);
-        //goTurn(prex,prey,i,j,pTurn);
         update();
         return;
     }
@@ -87,7 +74,6 @@ function clicked(e){
     prex = i;
     prey = j;
     toW(O); //O->W
-    //document.getElementById("test1").textContent = id + "がクリックされた";
     canMove(i, j);
     showBoard();
 
@@ -125,20 +111,20 @@ function canJumpMove(x,y,dx,dy){
 }
 
 function setnotMove(){
-    var nR = [  [ 3, 0], [ 3, 2], [ 3, 4], [ 4, 1], [ 4, 3], [ 5, 2],//左上黄
-                [ 7,16], [ 8,15], [ 8,17], [ 9,14], [ 9,16], [ 9,18],//右下黄
-                [ 3,14], [ 3,16], [ 3,18], [ 4,15], [ 4,17], [ 5,16],//右上緑
-                [ 7, 2], [ 8, 1], [ 8, 3], [ 9, 0], [ 9, 2], [ 9, 4] //左下緑
+    var nR = [  [ 2, 0], [ 2, 2], [ 3, 1],//左上黄
+                [ 5,11], [ 6,10], [ 6,12],//右下黄
+                [ 2,10], [ 2,12], [ 3,11],//右上緑
+                [ 5, 1], [ 6, 0], [ 6, 2] //左下緑
             ];
-    var nY = [  [ 0, 9], [ 1, 8], [ 1,10], [ 2, 7], [ 2, 9], [ 2,11],//上赤
-                [10, 7], [10, 9], [10,11], [11, 8], [11,10], [12, 9],//下赤
-                [ 3,14], [ 3,16], [ 3,18], [ 4,15], [ 4,17], [ 5,16],//右上緑
-                [ 7, 2], [ 8, 1], [ 8, 3], [ 9, 0], [ 9, 2], [ 9, 4] //左下緑
+    var nY = [  [ 0, 6], [ 1, 5], [ 1, 7],//上赤
+                [ 7, 5], [ 7, 7], [ 8, 6],//下赤
+                [ 2,10], [ 2,12], [ 3,11],//右上緑
+                [ 5, 1], [ 6, 0], [ 6, 2] //左下緑
             ];
-    var nG = [  [ 0, 9], [ 1, 8], [ 1,10], [ 2, 7], [ 2, 9], [ 2,11],//上赤
-                [10, 7], [10, 9], [10,11], [11, 8], [11,10], [12, 9],//下赤
-                [ 3, 0], [ 3, 2], [ 3, 4], [ 4, 1], [ 4, 3], [ 5, 2],//左上黄
-                [ 7,16], [ 8,15], [ 8,17], [ 9,14], [ 9,16], [ 9,18]//右下黄
+    var nG = [  [ 0, 6], [ 1, 5], [ 1, 7],//上赤
+                [ 7, 5], [ 7, 7], [ 8, 6],//下赤
+                [ 2, 0], [ 2, 2], [ 3, 1],//左上黄
+                [ 5,11], [ 6,10], [ 6,12] //右下黄
             ];
     if(pTurn == R) var mode = nR;
     if(pTurn == Y) var mode = nY;
